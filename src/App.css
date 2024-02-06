@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 50%;
 }
 .search button img{
   width: 20px;
@@ -22,6 +23,18 @@
   background-color: #121212;
   color: #34C94B;
   border-radius: 5px;
+  font-family: 'Poppins';
+  cursor: pointer;
+}
+.feedbackBtn:hover{
+  cursor: pointer;
+}
+button{
+  cursor: pointer;
+}
+button:hover{
+  cursor: pointer;
+
 }
 input{
   border-radius: 5px 0 0 5px;
@@ -30,5 +43,28 @@ input{
 input, button{
   border: 1px solid;
   padding: 10px;
-  
+  background-color: #ffff;
+}
+
+.hero-main{
+  height: 50vh;
+  background-color: #121212;
+  color: #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-section{
+  width: 70%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+h2{
+  font-size: 30px;
+}
+.hero-section img{
+  width: 300px;
 }
