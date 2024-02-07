@@ -1,3 +1,7 @@
+body{
+  background-color: #34C94B;
+  overflow-x: hidden;
+}
 .navbar{
   display: flex;
   align-items: center;
@@ -67,4 +71,42 @@ h2{
 }
 .hero-section img{
   width: 300px;
+}
+
+
+/* Card styles */
+
+
+.custom-card{
+  margin: 0 10px;
+  color: #ffff;
+}
+/* CarouselSec.css */
+.top-songs{
+
+  background-color: #121212;
+}
+.carousel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* #slider-container{
+  width: 70%;
+
+} */
+.slider-container{
+  width: 96%;
+}
+.top-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffff;
+  padding: 15px;
+}
+.top-head button{
+  background-color: #121212;
+  color: #34C94B;
+  border: 0;
 }
