@@ -19,7 +19,7 @@ function CarouselSec({ children }) {
     <div className="slider-container">
       <Slider {...settings}>
         {children.map((data) => (
-          <CustomCard data={data} />
+          <CustomCard key={data.id} data={data} />
         ))}
       </Slider>
     </div>

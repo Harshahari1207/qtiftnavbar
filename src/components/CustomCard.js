@@ -23,7 +23,7 @@ function CustomCard(data) {
     //         <h4>New Bollywood</h4>
     //     </div>
     // </div>
-    <div className="custom-card">
+    <div className="custom-card" key={data.id}>
       <Card className="card-container">
         <CardMedia
           component="img"
