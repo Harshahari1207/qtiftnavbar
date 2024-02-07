@@ -6,7 +6,9 @@ import axios from "axios";
 import GridCards from "./GridCards";
 function Home() {
   const [topsongs, setTopsongs] = useState([]);
-  const [ishowAll, setIshowAll] = useState(false);
+  const [newsongs, setNewsongs] = useState([]);
+  const [ishowAllTop, setIshowAllTop] = useState(false);
+  const [ishowAllNew, setIshowAllNew] = useState(false);
   const fetchData = async (url) => {
     try {
       const res = await axios.get(url);
@@ -24,10 +26,22 @@ function Home() {
       // console.log(data);
       setTopsongs(data.data);
     };
+    const fetchNewsongs = async()=>{
+      const data = await fetchData(
+        "https://qtify-backend-labs.crio.do/albums/new"
+      );
+      // console.log(data);
+      setNewsongs(data.data);
+
+    }
     fetchTopsongs();
+    fetchNewsongs()
   }, []);
-  const handleShowAll = () => {
-    setIshowAll(!ishowAll);
+  const handleShowAllTop = () => {
+    setIshowAllTop(!ishowAllTop);
+  };
+  const handleShowAllNew = () => {
+    setIshowAllNew(!ishowAllNew);
   };
   return (
     <div>
@@ -38,17 +52,34 @@ function Home() {
       <div className="top-songs">
         <div className="top-head">
           <h2>Top Albums</h2>
-          <button onClick={handleShowAll}>
-            {ishowAll ? <h3>Collapse</h3> : <h3>Show all</h3>}
+          <button onClick={handleShowAllTop}>
+            {ishowAllTop ? <h3>Collapse</h3> : <h3>Show all</h3>}
           </button>
         </div>
-        {ishowAll ? (
+        {ishowAllTop ? (
           <div className="carousel">
             <GridCards children={topsongs} />
           </div>
         ) : (
           <div className="carousel">
             <CarouselSec children={topsongs} />
+          </div>
+        )}
+      </div>
+      <div className="top-songs" style={{marginTop: "1px"}}>
+        <div className="top-head">
+          <h2>New Albums</h2>
+          <button onClick={handleShowAllNew}>
+            {ishowAllNew ? <h3>Collapse</h3> : <h3>Show all</h3>}
+          </button>
+        </div>
+        {ishowAllNew ? (
+          <div className="carousel">
+            <GridCards children={newsongs} />
+          </div>
+        ) : (
+          <div className="carousel">
+            <CarouselSec children={newsongs} />
           </div>
         )}
       </div>
