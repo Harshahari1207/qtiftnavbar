@@ -46,6 +46,8 @@ function Home() {
     const fetchAllsongs = async () => {
       const data = await fetchData("https://qtify-backend-labs.crio.do/songs");
       setSongs(data.data);
+      console.log(data.data);
+      setFiltersongs(data.data)
     };
     const fetchGenre = async () => {
       const data = await fetchData("https://qtify-backend-labs.crio.do/genres");
@@ -56,7 +58,7 @@ function Home() {
     fetchNewsongs();
     fetchAllsongs();
     fetchGenre();
-    setFiltersongs(songs)
+    // setFiltersongs(songs)
   }, []);
   const filterSongs = (value) => {
     if (value === "all") {
